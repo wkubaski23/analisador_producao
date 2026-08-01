@@ -1,0 +1,60 @@
+# =====================================================================
+# ANALISADOR DE PRODUCAO - preparacao do ambiente
+# Projeto: C:\Users\wajunior\analisador_producao
+# =====================================================================
+
+# --- 1. Cria e ativa o ambiente virtual -----------------------------
+python -m venv venv
+.\venv\Scripts\activate
+
+# --- 2. Instala as bibliotecas --------------------------------------
+# streamlit >= 1.36 e' necessario: o grafico de barras horizontais
+# (st.bar_chart com horizontal=True) so existe a partir dessa versao.
+# O app tem um fallback, mas o grafico sai na vertical em versao antiga.
+pip install "streamlit>=1.36" pandas numpy openpyxl openai reportlab scikit-learn
+
+# openpyxl e' o que o pandas usa para ler .xlsx - sem ele, read_excel falha.
+# reportlab e' usado na exportacao de respostas em PDF.
+# scikit-learn e numpy sao a camada de previsao e deteccao de anomalia.
+#   O modelo e' treinado na hora, a partir da propria planilha - nao ha
+#   arquivo de modelo para versionar nem etapa de treino separada.
+# NAO precisa de langchain: o codigo fala direto com a API da xAI
+# pelo cliente da openai, apontando base_url para api.x.ai.
+
+# --- 3. Congela as versoes (recomendado) ----------------------------
+pip freeze > requirements.txt
+# em outra maquina:  pip install -r requirements.txt
+
+# --- 4. Chave da API -----------------------------------------------
+# Opcao A: digitar na barra lateral do app a cada sessao.
+# Opcao B (melhor): variavel de ambiente, e o campo ja vem preenchido.
+set XAI_API_KEY=sua-chave-aqui
+#   PowerShell:  $env:XAI_API_KEY="sua-chave-aqui"
+
+# --- 5. Onde esta a planilha ---------------------------------------
+# Por padrao o app procura ProducaoIndustrial2026.xlsx na pasta onde
+# o comando streamlit run foi executado. Para apontar outro caminho:
+set PRODUCAO_XLSX=C:\Users\wajunior\analisador_producao\ProducaoIndustrial2026.xlsx
+
+# Pasta onde as conversas sao gravadas (padrao: .\sessoes):
+set PRODUCAO_SESSOES=C:\Users\wajunior\analisador_producao\sessoes
+
+# Modelo usado (padrao: grok-4):
+set XAI_MODEL=grok-4
+
+# --- 6. Roda o app -------------------------------------------------
+streamlit run app_grok_excel.py
+
+# =====================================================================
+# OBSERVACOES
+# =====================================================================
+# * A pasta sessoes\ guarda o historico das conversas em JSON, incluindo
+#   nomes de colaboradores e numeros de producao. Se o projeto for para
+#   um repositorio Git, acrescente ao .gitignore:
+#       sessoes/
+#       venv/
+#       *.xlsx
+#
+# * A versao anterior deste arquivo mandava rodar
+#   "streamlit run app_producao_streamlit.py" - arquivo que nao existe
+#   no projeto - e instalava langchain, que o codigo nunca importa.

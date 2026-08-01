@@ -1,0 +1,52 @@
+{
+  "id": "20260731_175558",
+  "titulo": "qual o funcionario que mais produziu",
+  "atualizada_em": "2026-07-31T18:02:37",
+  "planilha": "ProducaoIndustrial2026.xlsx",
+  "mensagens": [
+    {
+      "role": "assistant",
+      "content": "Olá! Sou o Wald e estou conectado à sua planilha. Posso fazer cálculos, rankings e gráficos, e agora lembro do que já conversamos — pode perguntar \"e no mês passado?\" que eu entendo o assunto."
+    },
+    {
+      "role": "user",
+      "content": "qual o funcionario que mais produziu ",
+      "ts": "2026-07-31T17:56:59"
+    },
+    {
+      "role": "assistant",
+      "content": "João Fernandes produziu o maior total: 20239 peças (período completo dos dados, todos os times).",
+      "ts": "2026-07-31T17:57:04"
+    },
+    {
+      "role": "user",
+      "content": "quais os 3 melhores?",
+      "ts": "2026-07-31T17:57:20"
+    },
+    {
+      "role": "assistant",
+      "content": "Os 3 colaboradores que mais produziram (período completo, todos os times):\n\n1. João Fernandes – 20239 peças  \n2. Camila Rodrigues – 20208 peças  \n3. Miguel Oliveira – 18716 peças",
+      "ts": "2026-07-31T17:57:24"
+    },
+    {
+      "role": "user",
+      "content": "qual a diferenca entre o joao e o que produziu menos?",
+      "ts": "2026-07-31T17:57:49"
+    },
+    {
+      "role": "assistant",
+      "content": "João Fernandes produziu 20239 peças.  \nCamila Souza produziu o menor total: 10409 peças.  \nDiferença: 9830 peças.",
+      "ts": "2026-07-31T17:57:53"
+    },
+    {
+      "role": "user",
+      "content": "e o miguel ?",
+      "ts": "2026-07-31T18:02:28"
+    },
+    {
+      "role": "assistant",
+      "content": "Miguel Oliveira produziu 18716 peças.  \nCamila Souza produziu o menor total: 10409 peças.  \nDiferença: 8307 peças.",
+      "ts": "2026-07-31T18:02:37"
+    }
+  ]
+}

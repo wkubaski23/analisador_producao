@@ -1,0 +1,32 @@
+{
+  "id": "20260801_164632",
+  "titulo": "com base na produção de junho de 2026 vc poderia estimar a p",
+  "atualizada_em": "2026-08-01T16:49:58",
+  "planilha": "ProducaoIndustrial2026.xlsx",
+  "mensagens": [
+    {
+      "role": "assistant",
+      "content": "Olá! Sou o Wald e estou conectado à sua planilha. Posso fazer cálculos, rankings e gráficos, e agora lembro do que já conversamos — pode perguntar \"e no mês passado?\" que eu entendo o assunto."
+    },
+    {
+      "role": "user",
+      "content": "com base na produção de junho de 2026 vc poderia estimar a produção de dezembro de 2026  se tirado um time ?",
+      "ts": "2026-08-01T16:49:34"
+    },
+    {
+      "role": "assistant",
+      "content": "Informe a xAI API Key na barra lateral para eu poder responder.",
+      "ts": "2026-08-01T16:49:34"
+    },
+    {
+      "role": "user",
+      "content": "com base na produção de junho de 2026 vc poderia estimar a produção de dezembro de 2026 se tirado um time ?",
+      "ts": "2026-08-01T16:49:55"
+    },
+    {
+      "role": "assistant",
+      "content": "Erro ao consultar o Wald: BadRequestError: Error code: 400 - {'code': 'invalid-argument', 'error': 'Incorrect API key provided. You can obtain an API key from https://console.x.ai.'}",
+      "ts": "2026-08-01T16:49:58"
+    }
+  ]
+}
